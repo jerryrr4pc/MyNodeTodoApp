@@ -1,0 +1,11 @@
+div#myTodoList.row(ng-repeat="todo in todoList")
+	div.col-sm-8
+		div.checkbox
+			label
+				input(type="checkbox" ng-click="markTodoAsCompleted(todo.TASK_ID)")
+				| {{todo.DESCRIPTION}}!
+	div.col-sm-4
+		button.btn.btn-default(ng-click="editTodo(todo)")
+			span.edit-button
+		button.btn.btn-default(ng-click="deleteTodo(todo.TASK_ID)")
+			span.trash-button

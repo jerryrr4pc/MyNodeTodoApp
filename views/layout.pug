@@ -1,0 +1,21 @@
+doctype html
+html(ng-app="myTodoApp")
+  head
+    title= title
+    // LOADING ALL THE NEEDED SCRIPTS FOR MY TODO AP TO WORK
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
+    //  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    
+    //LOADING JAVASCRIPT FILES IN ORDER FOR MY ANGULAS FRONTEND TO WORK
+    script(src='/javascripts/frontend/myAngularApp.js') 
+    script(src='/javascripts/frontend/controllers/todoMainController.js')
+    script(src='/javascripts/frontend/services/myTodoService.js')
+    script(src='/javascripts/frontend/services/utilsService.js')
+  body(ng-controller="todoMainController")
+    block content

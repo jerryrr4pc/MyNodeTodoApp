@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*Style for edit and trash buttons*/
+span.edit-button{
+	background: url(/../svg/si-glyph-document-edit.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    width: 20px;
+}
+
+span.trash-button{
+	background: url(/../svg/si-glyph-trash.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    width: 20px;
+}
+
+

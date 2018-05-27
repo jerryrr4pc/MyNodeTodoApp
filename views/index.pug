@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    div.container
+        div.jumbotron.text-center
+            h1 Hi!! you are #[span {{todoList.length}}] task#[span(ng-show="todoList.length!=1?'s':''") s]  away from being a great achiever!
+        
+        //DEFINING ACCORDION WITH TASK LIST
+        div#myTodoAccordion
+            div.card
+                div.card-header#backlogTasks
+                    h5.mb-0
+                        button.btn.btn-link(data-toggle="collapse" data-target="#backLogContents" aria-expanded="true" aria-controls="backLogContents" ng-click="setIsForTomorrowFlag(0)") Backlog
+
+                div#backLogContents.collapse(aria-labelledby="backlogTasks" data-parent="#myTodoAccordion")
+                    div.card-body My Backlog contents!
+
+            //DEFINING MIDDLE ACCORDION WITH MY TODAY TASKS!
+            div.card
+                div.card-header#todayTasks
+                    h5.mb-0
+                        button.btn.btn-link(data-toggle="collapse" data-target="#todayContents" aria-expanded="true" aria-controls="todayContents" ng-click="setIsForTomorrowFlag(0)") Today
+
+                div#todayContents.collapse.show(aria-labelledby="todayTasks" data-parent="#myTodoAccordion")
+                    div.card-body.pre-scrollable
+                        include dynamictemplates/taskList.pug
+
+            //DEFINING TOMORROW ACCORDIONS!
+            div.card
+                div.card-header#tomorowTasks
+                    h5.mb-0
+                        button.btn.btn-link(data-toggle="collapse" data-target="#tomorrowContents" aria-expanded="true" aria-controls="tomorrowContents" ng-click="setIsForTomorrowFlag(1)") Tomorrow
+
+                div#tomorrowContents.collapse(aria-labelledby="tomorrowTasks" data-parent="#myTodoAccordion")
+                    div.card-body Tomorrow contents!
+
+        include dynamictemplates/inputTaskForm.pug
